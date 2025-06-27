@@ -134,7 +134,12 @@ alignContent: "center",
     backgroundColor: colors.background,
      opacity: 1,
      justifyContent: "center",
-    alignContent:"center"
+     alignContent: "center",
+     shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 }, 
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
   },
   description: {
     flex:3,

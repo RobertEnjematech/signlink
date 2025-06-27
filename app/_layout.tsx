@@ -1,36 +1,20 @@
-import 'react-native-reanimated';
+import React from 'react';
 
-import { useFonts } from 'expo-font';
-import { View } from 'react-native';
+import Loadingscreen from '@/AppSignlinks/screens/loadscreen';
+import Onboardingscreen from '@/AppSignlinks/screens/onboardscreens';
+import SigntoText from '@/AppSignlinks/screens/signtotextscreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { mainstyles } from '@/AppSignlinks/styles/generalappstyles';
-import CameraTensor from '@/backendLogic/handgesture';
-import { useColorScheme } from '@/hooks/useColorScheme';
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from '@react-navigation/native';
+const Stack = createNativeStackNavigator();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <View style={mainstyles.container}>
-<CameraTensor/>
-        
-    </View>
-    </ThemeProvider>
+
+      <Stack.Navigator initialRouteName="loading" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="loading" component={Loadingscreen} />
+        <Stack.Screen name="sign" component={SigntoText} />
+        <Stack.Screen name="onboard" component={Onboardingscreen} />
+      </Stack.Navigator>
+    
   );
 }
-
-

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Image,
   Text,
   TouchableOpacity,
   View,
@@ -8,9 +9,15 @@ import {
 
 import { dashboardstyles } from '../styles/generalappstyles';
 
-const Onboardingscreen: React.FC = () => {
+const image = require('../assets/icon3.png')
+const you=require('../assets/icon2.png')
 
+const Onboardingscreen: React.FC = ({navigation}) => {
 
+  const handleSubmit = () => {
+  
+    navigation.replace('sign');
+}
 
   return (
       <View style={dashboardstyles.container}>
@@ -18,16 +25,23 @@ const Onboardingscreen: React.FC = () => {
               SIGNLINK
           </Text>
 
-         <TouchableOpacity style={{ flex:10 ,margin:"10%", marginTop:20, backgroundColor: "#E35817",borderRadius:20,justifyContent:"flex-start",alignItems:"center"}}><View style={{ flex:10 , marginBottom:0, backgroundColor: "#E35817",borderRadius:20,justifyContent:"flex-start",alignItems:"center"}}>
+      <TouchableOpacity onPress={handleSubmit} style={{ flex: 10, margin: "10%", marginTop: 20, backgroundColor: "#E35817", borderRadius: 20, shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 }, 
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84, justifyContent: "flex-start", alignItems: "center" }}>
+        <View style={{ flex: 10, marginBottom: 0, backgroundColor: "#E35817", borderRadius: 20,flexDirection:"row"  }}>
    
-  
-              <Text style={{ fontSize: 26, fontWeight: "bold", color: "#fff" }}>SIGN-TO-TEXT</Text>
+        <Image source={image} style={{ width: "70%", height: "70%",marginTop:"12%",marginRight:"5%",borderRadius:20}} />
+       
+        
           </View></TouchableOpacity> 
-          <TouchableOpacity style={{ flex: 12, margin: "10%", marginBottom: 43, backgroundColor: "#E35817", borderRadius: 20, justifyContent: "flex-start", alignItems: "center" }}>
-              <View style={{ flex: 10, margin: "10%", backgroundColor: "#E35817", borderRadius: 20, justifyContent: "flex-start", alignItems: "center" }}>
-               
-              <Text style={{ fontSize: 26, fontWeight: "bold", color: "#fff" }}>AUDIO-TO-TEXT</Text>
-              </View></TouchableOpacity>
+          <TouchableOpacity style={{ flex: 10, margin: "10%", marginTop: 20, backgroundColor: "#E35817", borderRadius: 20, justifyContent: "flex-start", alignItems: "center" }}>
+        <View style={{ flex: 10, marginBottom: 0, backgroundColor: "#E35817", borderRadius: 20,flexDirection:"row"  }}>
+   
+        <Image source={you} style={{ width: "70%", height: "70%",marginTop:"12%",marginRight:"5%"}} />
+       
+        
+          </View></TouchableOpacity>
           
         
            
