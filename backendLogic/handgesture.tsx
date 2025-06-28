@@ -72,17 +72,19 @@ export default function CameraTensor() {
 
   return (
     <View style={styles.container}>
-      <TensorCamera
-        style={styles.camera}
-        type={facing}
-        cameraTextureHeight={textureDims.height}
-        cameraTextureWidth={textureDims.width}
-        resizeHeight={tensorDims.height}
-        resizeWidth={tensorDims.width}
-        resizeDepth={3}
-        onReady={handleCameraStream}
-        autorender
-      />
+
+   <TensorCamera
+  style={styles.camera}
+  useCustomShadersToResize={false} 
+  resizeHeight={tensorDims.height}
+  resizeWidth={tensorDims.width}
+  resizeDepth={3}
+  cameraTextureHeight={textureDims.height}
+  cameraTextureWidth={textureDims.width}
+  onReady={handleCameraStream}
+  autorender
+/>
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
           <Text style={styles.text}>Flip Camera</Text>
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    width:"100%"
   },
   message: {
     textAlign: 'center',

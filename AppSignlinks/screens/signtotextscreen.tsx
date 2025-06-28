@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 
-import Camera from '@/backendLogic/cameratext';
+import CameraTensor from '@/backendLogic/handgesture';
 
 import { dashboardstyles } from '../styles/generalappstyles';
 
@@ -22,7 +22,7 @@ const SigntoText: React.FC = () => {
       
 <View style={{  width:"83%",height:"60%", margin:"5%",marginLeft:"10%", backgroundColor: "#D9D9D9", borderRadius:30,overflow:"hidden",alignItems:"center"}}>
  
-<Camera/>
+<CameraTensor/>
           </View>
    
       <View style={{backgroundColor:"#E35817",width:"83%",margin:"10%",height:"18%",marginTop:"2%", borderRadius:15,justifyContent:"center"}}>

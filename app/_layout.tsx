@@ -13,7 +13,8 @@ export default function RootLayout() {
       <Stack.Navigator initialRouteName="loading" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="loading" component={Loadingscreen} />
         <Stack.Screen name="sign" component={SigntoText} />
-        <Stack.Screen name="onboard" component={Onboardingscreen} />
+      <Stack.Screen name="onboard" component={Onboardingscreen} />
+      
       </Stack.Navigator>
     
   );
